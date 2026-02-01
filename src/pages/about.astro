@@ -1,40 +1,41 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="About Us | Pool Man Mississauga" description="Learn about Pool Man Mississauga - a family-owned pool service company serving the GTA since 1978. A+ BBB rated with 45+ years of experience.">
   <!-- Hero -->
-  <section class="bg-[#1a5f7a] text-white py-16 md:py-24">
+  <section class="bg-[#1a5f7a] text-white py-12 sm:py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">About Pool Man Mississauga</h1>
-      <p class="text-xl text-blue-100 max-w-2xl">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">About Pool Man Mississauga</h1>
+      <p class="text-lg sm:text-xl text-blue-100 max-w-2xl">
         A family business built on quality, trust, and 45+ years of dedicated service.
       </p>
     </div>
   </section>
 
   <!-- Story Section -->
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-12 sm:py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div>
           <span class="text-[#1a5f7a] font-semibold">Our Story</span>
           <h2 class="section-heading mt-2">Serving Mississauga Since 1978</h2>
-          <p class="text-lg text-gray-600 mb-6">
+          <p class="text-base sm:text-lg text-gray-600 mb-6">
             For over 45 years, Pool Man Mississauga has been keeping hundreds of pools in the Mississauga area in top operating condition. Founded on December 27, 1978, we've built our reputation one satisfied customer at a time.
           </p>
-          <p class="text-lg text-gray-600 mb-6">
+          <p class="text-base sm:text-lg text-gray-600 mb-6">
             We're a family-owned business that takes pride in providing quality service, expert workmanship, and fair prices. Our small core staff brings decades of experience dedicated to keeping area pools running smoothly with the most up-to-date equipment and features.
           </p>
-          <p class="text-lg text-gray-600">
+          <p class="text-base sm:text-lg text-gray-600">
             Whether it's an emergency repair or a complete pool renovation, we stand behind our work. That commitment to excellence has earned us an A+ rating from the Better Business Bureau and the loyalty of customers who have trusted us for decades.
           </p>
         </div>
-        <div class="relative">
-          <img src="/images/reno-01.jpg" alt="Pool Man Mississauga team work" class="rounded-xl shadow-2xl" />
-          <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
-            <div class="text-5xl font-bold text-[#1a5f7a]">1978</div>
-            <div class="text-gray-600">Year Founded</div>
+        <div class="relative order-first md:order-last">
+          <img src={`${base}images/reno-01.jpg`} alt="Pool Man Mississauga team work" class="rounded-xl shadow-2xl w-full" />
+          <div class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-white p-4 sm:p-6 rounded-xl shadow-lg">
+            <div class="text-4xl sm:text-5xl font-bold text-[#1a5f7a]">1978</div>
+            <div class="text-gray-600 text-sm sm:text-base">Year Founded</div>
           </div>
         </div>
       </div>
@@ -42,16 +43,16 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Values Section -->
-  <section class="py-16 md:py-24 bg-gray-50">
+  <section class="py-12 sm:py-16 md:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
+      <div class="text-center mb-8 sm:mb-12">
         <h2 class="section-heading">What Sets Us Apart</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           Our values guide everything we do, from how we treat our customers to the quality of our work.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
         <div class="card text-center">
           <div class="w-16 h-16 bg-[#1a5f7a]/10 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg class="w-8 h-8 text-[#1a5f7a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,7 +77,7 @@ import Layout from '../layouts/Layout.astro';
           </p>
         </div>
 
-        <div class="card text-center">
+        <div class="card text-center sm:col-span-2 md:col-span-1">
           <div class="w-16 h-16 bg-[#1a5f7a]/10 rounded-full flex items-center justify-center mx-auto mb-4">
             <svg class="w-8 h-8 text-[#1a5f7a]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
@@ -92,74 +93,74 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Credentials Section -->
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-12 sm:py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
+      <div class="text-center mb-8 sm:mb-12">
         <h2 class="section-heading">Our Credentials</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
           We're proud of our reputation and the trust our customers place in us.
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-gray-50 rounded-xl p-6 text-center">
-          <div class="text-5xl font-bold text-[#1a5f7a] mb-2">A+</div>
-          <div class="text-gray-600">BBB Rating</div>
-          <p class="text-sm text-gray-500 mt-2">Since 2001</p>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="bg-gray-50 rounded-xl p-4 sm:p-6 text-center">
+          <div class="text-4xl sm:text-5xl font-bold text-[#1a5f7a] mb-2">A+</div>
+          <div class="text-sm sm:text-base text-gray-600">BBB Rating</div>
+          <p class="text-xs sm:text-sm text-gray-500 mt-2">Since 2001</p>
         </div>
 
-        <div class="bg-gray-50 rounded-xl p-6 text-center">
-          <div class="text-5xl font-bold text-[#1a5f7a] mb-2">4.6</div>
-          <div class="text-gray-600">Google Rating</div>
-          <p class="text-sm text-gray-500 mt-2">30+ Reviews</p>
+        <div class="bg-gray-50 rounded-xl p-4 sm:p-6 text-center">
+          <div class="text-4xl sm:text-5xl font-bold text-[#1a5f7a] mb-2">4.6</div>
+          <div class="text-sm sm:text-base text-gray-600">Google Rating</div>
+          <p class="text-xs sm:text-sm text-gray-500 mt-2">30+ Reviews</p>
         </div>
 
-        <div class="bg-gray-50 rounded-xl p-6 text-center">
-          <div class="text-5xl font-bold text-[#1a5f7a] mb-2">45+</div>
-          <div class="text-gray-600">Years in Business</div>
-          <p class="text-sm text-gray-500 mt-2">Est. 1978</p>
+        <div class="bg-gray-50 rounded-xl p-4 sm:p-6 text-center">
+          <div class="text-4xl sm:text-5xl font-bold text-[#1a5f7a] mb-2">45+</div>
+          <div class="text-sm sm:text-base text-gray-600">Years in Business</div>
+          <p class="text-xs sm:text-sm text-gray-500 mt-2">Est. 1978</p>
         </div>
 
-        <div class="bg-gray-50 rounded-xl p-6 text-center">
-          <div class="text-5xl font-bold text-[#1a5f7a] mb-2">100%</div>
-          <div class="text-gray-600">Satisfaction</div>
-          <p class="text-sm text-gray-500 mt-2">Guaranteed</p>
+        <div class="bg-gray-50 rounded-xl p-4 sm:p-6 text-center">
+          <div class="text-4xl sm:text-5xl font-bold text-[#1a5f7a] mb-2">100%</div>
+          <div class="text-sm sm:text-base text-gray-600">Satisfaction</div>
+          <p class="text-xs sm:text-sm text-gray-500 mt-2">Guaranteed</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Specialty Section -->
-  <section class="py-16 md:py-24 bg-gray-50">
+  <section class="py-12 sm:py-16 md:py-24 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div class="order-2 md:order-1">
-          <img src="/images/liner-01.jpg" alt="Vinyl over steel pool construction" class="rounded-xl shadow-lg" />
+      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div>
+          <img src={`${base}images/liner-01.jpg`} alt="Vinyl over steel pool construction" class="rounded-xl shadow-lg w-full" />
         </div>
-        <div class="order-1 md:order-2">
+        <div>
           <span class="text-[#1a5f7a] font-semibold">Our Specialty</span>
           <h2 class="section-heading mt-2">Vinyl Over Steel Construction</h2>
-          <p class="text-lg text-gray-600 mb-6">
+          <p class="text-base sm:text-lg text-gray-600 mb-6">
             We specialize in vinyl over steel pool construction - a durable, cost-effective solution that combines the strength of steel walls with the beauty and flexibility of vinyl liners.
           </p>
-          <p class="text-lg text-gray-600 mb-6">
+          <p class="text-base sm:text-lg text-gray-600 mb-6">
             This construction method allows for custom shapes and designs while providing excellent longevity. Our expertise in this area sets us apart from competitors and allows us to deliver results that exceed expectations.
           </p>
-          <a href="/services#renovations" class="btn-primary">Learn About Our Renovations</a>
+          <a href={`${base}services#renovations`} class="btn-primary">Learn About Our Renovations</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16 md:py-24 bg-[#1a5f7a]">
+  <section class="py-12 sm:py-16 md:py-24 bg-[#1a5f7a]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Experience the Difference</h2>
-      <p class="text-xl text-blue-100 mb-8">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Experience the Difference</h2>
+      <p class="text-lg sm:text-xl text-blue-100 mb-8">
         Discover why Mississauga homeowners have trusted Pool Man for over 45 years.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="bg-white text-[#1a5f7a] font-semibold py-3 px-8 rounded-lg hover:bg-blue-100 transition-colors text-lg">
+        <a href={`${base}contact`} class="bg-white text-[#1a5f7a] font-semibold py-3 px-8 rounded-lg hover:bg-blue-100 transition-colors text-lg">
           Get in Touch
         </a>
         <a href="tel:9056074613" class="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition-colors text-lg">

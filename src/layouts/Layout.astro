@@ -7,6 +7,7 @@ interface Props {
 }
 
 const { title, description = "Pool Man Mississauga - Expert pool service, maintenance, repairs, and renovations since 1978. A+ BBB rated. Serving Mississauga and the GTA." } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -15,15 +16,15 @@ const { title, description = "Pool Man Mississauga - Expert pool service, mainte
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="icon" type="image/png" href={`${base}images/logo.png`} />
     <title>{title}</title>
   </head>
   <body class="bg-gray-50 text-gray-900">
     <header class="bg-[#1a5f7a] text-white sticky top-0 z-50 shadow-lg">
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16 md:h-20">
-          <a href="/" class="flex items-center gap-3">
-            <img src="/images/logo.png" alt="Pool Man Mississauga" class="h-10 md:h-12 w-auto" />
+          <a href={base} class="flex items-center gap-3">
+            <img src={`${base}images/logo.png`} alt="Pool Man Mississauga" class="h-10 md:h-12 w-auto" />
             <div class="hidden sm:block">
               <span class="font-bold text-lg md:text-xl">Pool Man</span>
               <span class="text-sm block text-blue-200">Mississauga</span>
@@ -39,22 +40,22 @@ const { title, description = "Pool Man Mississauga - Expert pool service, mainte
 
           <!-- Desktop nav -->
           <div class="hidden md:flex items-center gap-6">
-            <a href="/" class="hover:text-blue-200 transition-colors">Home</a>
-            <a href="/services" class="hover:text-blue-200 transition-colors">Services</a>
-            <a href="/gallery" class="hover:text-blue-200 transition-colors">Gallery</a>
-            <a href="/about" class="hover:text-blue-200 transition-colors">About</a>
-            <a href="/contact" class="bg-white text-[#1a5f7a] px-4 py-2 rounded-lg font-semibold hover:bg-blue-100 transition-colors">Contact Us</a>
+            <a href={base} class="hover:text-blue-200 transition-colors">Home</a>
+            <a href={`${base}services`} class="hover:text-blue-200 transition-colors">Services</a>
+            <a href={`${base}gallery`} class="hover:text-blue-200 transition-colors">Gallery</a>
+            <a href={`${base}about`} class="hover:text-blue-200 transition-colors">About</a>
+            <a href={`${base}contact`} class="bg-white text-[#1a5f7a] px-4 py-2 rounded-lg font-semibold hover:bg-blue-100 transition-colors">Contact Us</a>
           </div>
         </div>
 
         <!-- Mobile nav -->
         <div id="mobile-menu" class="hidden md:hidden pb-4">
           <div class="flex flex-col gap-3">
-            <a href="/" class="hover:text-blue-200 transition-colors py-2">Home</a>
-            <a href="/services" class="hover:text-blue-200 transition-colors py-2">Services</a>
-            <a href="/gallery" class="hover:text-blue-200 transition-colors py-2">Gallery</a>
-            <a href="/about" class="hover:text-blue-200 transition-colors py-2">About</a>
-            <a href="/contact" class="bg-white text-[#1a5f7a] px-4 py-2 rounded-lg font-semibold text-center hover:bg-blue-100 transition-colors">Contact Us</a>
+            <a href={base} class="hover:text-blue-200 transition-colors py-2">Home</a>
+            <a href={`${base}services`} class="hover:text-blue-200 transition-colors py-2">Services</a>
+            <a href={`${base}gallery`} class="hover:text-blue-200 transition-colors py-2">Gallery</a>
+            <a href={`${base}about`} class="hover:text-blue-200 transition-colors py-2">About</a>
+            <a href={`${base}contact`} class="bg-white text-[#1a5f7a] px-4 py-2 rounded-lg font-semibold text-center hover:bg-blue-100 transition-colors">Contact Us</a>
           </div>
         </div>
       </nav>
@@ -69,7 +70,7 @@ const { title, description = "Pool Man Mississauga - Expert pool service, mainte
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div class="flex items-center gap-3 mb-4">
-              <img src="/images/logo.png" alt="Pool Man Mississauga" class="h-12 w-auto" />
+              <img src={`${base}images/logo.png`} alt="Pool Man Mississauga" class="h-12 w-auto" />
               <div>
                 <span class="font-bold text-xl">Pool Man</span>
                 <span class="text-sm block text-blue-300">Mississauga</span>
@@ -86,10 +87,10 @@ const { title, description = "Pool Man Mississauga - Expert pool service, mainte
           <div>
             <h4 class="font-bold text-lg mb-4">Quick Links</h4>
             <ul class="space-y-2 text-gray-300">
-              <li><a href="/services" class="hover:text-white transition-colors">Services</a></li>
-              <li><a href="/gallery" class="hover:text-white transition-colors">Gallery</a></li>
-              <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
+              <li><a href={`${base}services`} class="hover:text-white transition-colors">Services</a></li>
+              <li><a href={`${base}gallery`} class="hover:text-white transition-colors">Gallery</a></li>
+              <li><a href={`${base}about`} class="hover:text-white transition-colors">About Us</a></li>
+              <li><a href={`${base}contact`} class="hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
 

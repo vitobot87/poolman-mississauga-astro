@@ -1,45 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 
 const galleryImages = [
-  { src: '/images/reno-01.jpg', alt: 'Pool renovation with LED lighting', category: 'renovations' },
-  { src: '/images/liner-01.jpg', alt: 'Custom vinyl liner installation', category: 'liners' },
-  { src: '/images/reno-03.jpg', alt: 'Backyard pool transformation', category: 'renovations' },
-  { src: '/images/liner-02.jpg', alt: 'Pool liner replacement', category: 'liners' },
-  { src: '/images/reno-05.jpg', alt: 'Complete pool renovation', category: 'renovations' },
-  { src: '/images/liner-03.jpg', alt: 'Premium liner installation', category: 'liners' },
+  { src: `${base}images/reno-01.jpg`, alt: 'Pool renovation with LED lighting', category: 'renovations' },
+  { src: `${base}images/liner-01.jpg`, alt: 'Custom vinyl liner installation', category: 'liners' },
+  { src: `${base}images/reno-03.jpg`, alt: 'Backyard pool transformation', category: 'renovations' },
+  { src: `${base}images/liner-02.jpg`, alt: 'Pool liner replacement', category: 'liners' },
+  { src: `${base}images/reno-05.jpg`, alt: 'Complete pool renovation', category: 'renovations' },
+  { src: `${base}images/liner-03.jpg`, alt: 'Premium liner installation', category: 'liners' },
 ];
 ---
 
 <Layout title="Pool Gallery | Pool Man Mississauga" description="View our portfolio of pool renovations, liner installations, and upgrades. See the quality craftsmanship Pool Man Mississauga delivers.">
   <!-- Hero -->
-  <section class="bg-[#1a5f7a] text-white py-16 md:py-24">
+  <section class="bg-[#1a5f7a] text-white py-12 sm:py-16 md:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Work</h1>
-      <p class="text-xl text-blue-100 max-w-2xl">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Our Work</h1>
+      <p class="text-lg sm:text-xl text-blue-100 max-w-2xl">
         Browse our portfolio of pool renovations, liner installations, and upgrades. Quality craftsmanship you can see.
       </p>
     </div>
   </section>
 
   <!-- Gallery Grid -->
-  <section class="py-16 md:py-24 bg-white">
+  <section class="py-12 sm:py-16 md:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Filter Buttons -->
-      <div class="flex flex-wrap justify-center gap-4 mb-12">
-        <button class="filter-btn active px-6 py-2 rounded-full bg-[#1a5f7a] text-white font-semibold transition-colors" data-filter="all">
+      <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+        <button class="filter-btn active px-4 sm:px-6 py-2 rounded-full bg-[#1a5f7a] text-white font-semibold transition-colors text-sm sm:text-base" data-filter="all">
           All Projects
         </button>
-        <button class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold hover:bg-gray-200 transition-colors" data-filter="renovations">
+        <button class="filter-btn px-4 sm:px-6 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold hover:bg-gray-200 transition-colors text-sm sm:text-base" data-filter="renovations">
           Renovations
         </button>
-        <button class="filter-btn px-6 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold hover:bg-gray-200 transition-colors" data-filter="liners">
+        <button class="filter-btn px-4 sm:px-6 py-2 rounded-full bg-gray-100 text-gray-700 font-semibold hover:bg-gray-200 transition-colors text-sm sm:text-base" data-filter="liners">
           Liners
         </button>
       </div>
 
       <!-- Gallery Grid -->
-      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {galleryImages.map((image) => (
           <div class="gallery-item group relative overflow-hidden rounded-xl shadow-lg cursor-pointer" data-category={image.category}>
             <img
@@ -48,9 +49,9 @@ const galleryImages = [
               class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-300"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div class="absolute bottom-0 left-0 right-0 p-6">
-                <p class="text-white font-semibold">{image.alt}</p>
-                <span class="text-blue-200 text-sm capitalize">{image.category}</span>
+              <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6">
+                <p class="text-white font-semibold text-sm sm:text-base">{image.alt}</p>
+                <span class="text-blue-200 text-xs sm:text-sm capitalize">{image.category}</span>
               </div>
             </div>
           </div>
@@ -62,45 +63,45 @@ const galleryImages = [
   <!-- Lightbox Modal -->
   <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
     <button id="lightbox-close" class="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 z-10">&times;</button>
-    <button id="lightbox-prev" class="absolute left-4 text-white text-4xl hover:text-gray-300 z-10">&larr;</button>
-    <button id="lightbox-next" class="absolute right-4 text-white text-4xl hover:text-gray-300 z-10">&rarr;</button>
+    <button id="lightbox-prev" class="absolute left-2 sm:left-4 text-white text-3xl sm:text-4xl hover:text-gray-300 z-10">&larr;</button>
+    <button id="lightbox-next" class="absolute right-2 sm:right-4 text-white text-3xl sm:text-4xl hover:text-gray-300 z-10">&rarr;</button>
     <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain rounded-lg" />
-    <div id="lightbox-caption" class="absolute bottom-4 left-0 right-0 text-center text-white"></div>
+    <div id="lightbox-caption" class="absolute bottom-4 left-0 right-0 text-center text-white text-sm sm:text-base px-4"></div>
   </div>
 
   <!-- Stats Section -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-12 sm:py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
         <div>
-          <div class="text-4xl font-bold text-[#1a5f7a]">500+</div>
-          <div class="text-gray-600">Pools Serviced</div>
+          <div class="text-3xl sm:text-4xl font-bold text-[#1a5f7a]">500+</div>
+          <div class="text-sm sm:text-base text-gray-600">Pools Serviced</div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-[#1a5f7a]">45+</div>
-          <div class="text-gray-600">Years Experience</div>
+          <div class="text-3xl sm:text-4xl font-bold text-[#1a5f7a]">45+</div>
+          <div class="text-sm sm:text-base text-gray-600">Years Experience</div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-[#1a5f7a]">100+</div>
-          <div class="text-gray-600">Liner Installations</div>
+          <div class="text-3xl sm:text-4xl font-bold text-[#1a5f7a]">100+</div>
+          <div class="text-sm sm:text-base text-gray-600">Liner Installations</div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-[#1a5f7a]">50+</div>
-          <div class="text-gray-600">Complete Renovations</div>
+          <div class="text-3xl sm:text-4xl font-bold text-[#1a5f7a]">50+</div>
+          <div class="text-sm sm:text-base text-gray-600">Complete Renovations</div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="py-16 md:py-24 bg-[#1a5f7a]">
+  <section class="py-12 sm:py-16 md:py-24 bg-[#1a5f7a]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">Want Results Like These?</h2>
-      <p class="text-xl text-blue-100 mb-8">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Want Results Like These?</h2>
+      <p class="text-lg sm:text-xl text-blue-100 mb-8">
         Let's discuss your pool project. We offer free assessments and honest recommendations.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="bg-white text-[#1a5f7a] font-semibold py-3 px-8 rounded-lg hover:bg-blue-100 transition-colors text-lg">
+        <a href={`${base}contact`} class="bg-white text-[#1a5f7a] font-semibold py-3 px-8 rounded-lg hover:bg-blue-100 transition-colors text-lg">
           Get a Free Quote
         </a>
         <a href="tel:9056074613" class="border-2 border-white text-white font-semibold py-3 px-8 rounded-lg hover:bg-white/10 transition-colors text-lg">
