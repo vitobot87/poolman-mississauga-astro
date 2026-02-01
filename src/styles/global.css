@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+:root {
+  --pool-blue: #1a5f7a;
+  --pool-light: #2d8cb8;
+  --pool-dark: #0d3d4d;
+  --pool-accent: #4ecdc4;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.btn-primary {
+  @apply bg-[#1a5f7a] hover:bg-[#0d3d4d] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-white hover:bg-gray-100 text-[#1a5f7a] font-semibold py-3 px-6 rounded-lg border-2 border-[#1a5f7a] transition-colors duration-200;
+}
+
+.section-heading {
+  @apply text-3xl md:text-4xl font-bold text-[#0d3d4d] mb-4;
+}
+
+.card {
+  @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-200;
+}
